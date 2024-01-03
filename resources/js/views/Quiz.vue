@@ -67,10 +67,7 @@ export default {
         const fetchQuestion = async () => {
             fetchingQuestion.value = true;
 
-            const maxAttempts = 3;
-            let attempts = 0;
-
-            while (attempts < maxAttempts) {
+            while (true) {
                 try {
                     const response = await fetch("/api/questions");
                     const data = await response.json();
@@ -88,21 +85,10 @@ export default {
                 } catch (error) {
                     console.error("Error fetching question:", error);
                 }
-
-                attempts++;
             }
 
             // Reset fetchingQuestion immediately before checking if maxAttempts is reached
             fetchingQuestion.value = false;
-
-            // Discard recent user answers if maximum attempts are reached and results are still empty
-            if (attempts === maxAttempts) {
-                console.error(
-                    "Failed to fetch non-empty results after multiple attempts"
-                );
-                store.commit("resetRecentUserAnswers"); // Reset recent user answers
-                // You can also show an error message or handle the situation in your UI
-            }
         };
 
         const answerQuestion = async (answer) => {

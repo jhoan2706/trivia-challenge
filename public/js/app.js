@@ -19060,62 +19060,49 @@ var _default = exports["default"] = {
     };
     var fetchQuestion = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var maxAttempts, attempts, response, data;
+        var response, data;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               fetchingQuestion.value = true;
-              maxAttempts = 3;
-              attempts = 0;
-            case 3:
-              if (!(attempts < maxAttempts)) {
-                _context.next = 23;
-                break;
-              }
-              _context.prev = 4;
-              _context.next = 7;
+            case 1:
+              if (false) {}
+              _context.prev = 2;
+              _context.next = 5;
               return fetch("/api/questions");
-            case 7:
+            case 5:
               response = _context.sent;
-              _context.next = 10;
+              _context.next = 8;
               return response.json();
-            case 10:
+            case 8:
               data = _context.sent;
               if (!(data.results && data.results.length > 0)) {
-                _context.next = 15;
+                _context.next = 13;
                 break;
               }
               // Update the questions in Vuex store
               store.commit("setQuestions", data.results);
               // Move to the next question after updating the store
               store.commit("setCurrentQuestion", store.state.currentQuestion + 1);
-              return _context.abrupt("break", 23);
+              return _context.abrupt("break", 20);
+            case 13:
+              _context.next = 18;
+              break;
             case 15:
-              _context.next = 20;
-              break;
-            case 17:
-              _context.prev = 17;
-              _context.t0 = _context["catch"](4);
+              _context.prev = 15;
+              _context.t0 = _context["catch"](2);
               console.error("Error fetching question:", _context.t0);
-            case 20:
-              attempts++;
-              _context.next = 3;
+            case 18:
+              _context.next = 1;
               break;
-            case 23:
+            case 20:
               // Reset fetchingQuestion immediately before checking if maxAttempts is reached
               fetchingQuestion.value = false;
-
-              // Discard recent user answers if maximum attempts are reached and results are still empty
-              if (attempts === maxAttempts) {
-                console.error("Failed to fetch non-empty results after multiple attempts");
-                store.commit("resetRecentUserAnswers"); // Reset recent user answers
-                // You can also show an error message or handle the situation in your UI
-              }
-            case 25:
+            case 21:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[4, 17]]);
+        }, _callee, null, [[2, 15]]);
       }));
       return function fetchQuestion() {
         return _ref.apply(this, arguments);

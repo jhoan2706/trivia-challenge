@@ -1,5 +1,3 @@
-Certainly! Here's an updated version of your README file:
-
 ```markdown
 # Trivia Challenge App
 
