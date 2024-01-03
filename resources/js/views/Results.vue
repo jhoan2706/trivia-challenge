@@ -37,7 +37,7 @@
       Footer,
     },
     mounted() {
-      console.log('userAnswers in Results.vue', this.$store.state.userAnswers);
+      //console.log('userAnswers in Results.vue', this.$store.state.userAnswers);
     },
     computed: {
       correctAnswers() {

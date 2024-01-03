@@ -2,11 +2,13 @@
     <div>
         <Nav />
         <div class="quiz-container">
+            <!-- Notification for quiz -->
             <div class="notification is-primary">
                 <h2 class="title is-4" v-html="category"></h2>
                 <p class="subtitle is-6 question-text" v-html="question"></p>
             </div>
 
+            <!-- Buttons for True and False -->
             <div class="buttons">
                 <button
                     class="button is-success"
@@ -24,6 +26,7 @@
                 </button>
             </div>
 
+            <!-- Display current question number -->
             <p class="has-text-info">
                 {{ store.state.currentQuestion }} of
                 {{ store.state.totalQuestions }}
@@ -48,15 +51,15 @@ export default {
     },
     setup() {
         const store = useStore();
-        const router = useRouter(); // Access Vue Router
+        const router = useRouter();
         const category = ref("");
         const question = ref("");
         const fetchingQuestion = ref(false);
 
+        // Check if the quiz is completed to navigate to the results page
         const checkQuizCompletion = () => {
             if (store.state.currentQuestion > store.state.totalQuestions) {
-                const userAnswers = store.state.userAnswers;
-
+                //const userAnswers = store.state.userAnswers;
                 // Use Vue Router to navigate to the results page
                 router.push("/result");
 
@@ -64,6 +67,7 @@ export default {
             }
         };
 
+        // Fetch question from the API
         const fetchQuestion = async () => {
             fetchingQuestion.value = true;
 
@@ -80,7 +84,7 @@ export default {
                             "setCurrentQuestion",
                             store.state.currentQuestion + 1
                         );
-                        break; // Exit the loop if non-empty results are obtained
+                        break;
                     }
                 } catch (error) {
                     console.error("Error fetching question:", error);
@@ -91,33 +95,48 @@ export default {
             fetchingQuestion.value = false;
         };
 
+        // Save user's answer and move to the next question
         const answerQuestion = async (answer) => {
-            // Save user's answer and question response in Vuex store
-            const currentQuestionIndex = store.state.currentQuestion;
+            const currentQuestionIndex = store.state.currentQuestion - 1;
             const currentQuestion = store.state.questions[currentQuestionIndex];
-            store.commit("addUserAnswer", {
-                answer,
-                question: {
-                    text: currentQuestion.question,
-                    correct_answer: currentQuestion.correct_answer,
-                },
-            });
+            // Ensure that the current question index is valid
+            if (
+                currentQuestionIndex >= 0 &&
+                currentQuestionIndex < store.state.questions.length
+            ) {
+                const currentQuestion =
+                    store.state.questions[currentQuestionIndex];
 
-            // Reset fetchingQuestion to false before fetching the next question
-            fetchingQuestion.value = false;
+                store.commit("addUserAnswer", {
+                    answer,
+                    question: {
+                        text: currentQuestion.question,
+                        correct_answer: currentQuestion.correct_answer,
+                    },
+                });
 
-            // Move to the next question
-            await fetchQuestion();
+                // Reset fetchingQuestion to false before fetching the next question
+                fetchingQuestion.value = false;
 
-            // Check if the quiz is completed after fetching the next question
-            checkQuizCompletion();
+                // Move to the next question
+                await fetchQuestion();
+
+                // Check if the quiz is completed after fetching the next question
+                checkQuizCompletion();
+            } else {
+                console.error(
+                    "Invalid currentQuestionIndex:",
+                    currentQuestionIndex
+                );
+            }
         };
 
+        // Fetch the first question when the component is mounted
         onMounted(() => {
-            // Fetch the first question when the component is mounted
             fetchQuestion();
         });
 
+        // Watch for changes in questions and update category and question
         watch(
             () => store.state.questions,
             () => {

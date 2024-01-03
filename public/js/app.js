@@ -18489,6 +18489,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/*! bulma.io v0.9.4 | MIT License | gi
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n  /* Add any custom styles for your navigation bar here */\n.navbar[data-v-7cd4f788] {\n    background-color: #3273dc; /* Customize the background color */\n}\n.navbar-item[data-v-7cd4f788] {\n    padding: 1rem;\n}\n.title[data-v-7cd4f788] {\n    color: white; /* Customize the text color */\n}\n  ", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Quiz.vue?vue&type=style&index=0&id=a6846118&scoped=true&lang=css":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Quiz.vue?vue&type=style&index=0&id=a6846118&scoped=true&lang=css ***!
@@ -18632,6 +18655,35 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 var _default = exports["default"] = {};
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+__webpack_require__(/*! bulma/css/bulma.min.css */ "./node_modules/bulma/css/bulma.min.css");
+var _Nav = _interopRequireDefault(__webpack_require__(/*! @/components/Nav.vue */ "./resources/js/components/Nav.vue"));
+var _Footer = _interopRequireDefault(__webpack_require__(/*! @/components/Footer.vue */ "./resources/js/components/Footer.vue"));
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+var _default = exports["default"] = {
+  components: {
+    Nav: _Nav["default"],
+    Footer: _Footer["default"]
+  }
+};
 
 /***/ }),
 
@@ -19044,20 +19096,23 @@ var _default = exports["default"] = {
   },
   setup: function setup() {
     var store = (0, _vuex.useStore)();
-    var router = (0, _vueRouter.useRouter)(); // Access Vue Router
+    var router = (0, _vueRouter.useRouter)();
     var category = (0, _vue.ref)("");
     var question = (0, _vue.ref)("");
     var fetchingQuestion = (0, _vue.ref)(false);
+
+    // Check if the quiz is completed to navigate to the results page
     var checkQuizCompletion = function checkQuizCompletion() {
       if (store.state.currentQuestion > store.state.totalQuestions) {
-        var userAnswers = store.state.userAnswers;
-
+        //const userAnswers = store.state.userAnswers;
         // Use Vue Router to navigate to the results page
         router.push("/result");
 
         // Or trigger any other action you need
       }
     };
+
+    // Fetch question from the API
     var fetchQuestion = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var response, data;
@@ -19108,20 +19163,26 @@ var _default = exports["default"] = {
         return _ref.apply(this, arguments);
       };
     }();
+
+    // Save user's answer and move to the next question
     var answerQuestion = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(answer) {
-        var currentQuestionIndex, currentQuestion;
+        var currentQuestionIndex, currentQuestion, _currentQuestion;
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              // Save user's answer and question response in Vuex store
-              currentQuestionIndex = store.state.currentQuestion;
-              currentQuestion = store.state.questions[currentQuestionIndex];
+              currentQuestionIndex = store.state.currentQuestion - 1;
+              currentQuestion = store.state.questions[currentQuestionIndex]; // Ensure that the current question index is valid
+              if (!(currentQuestionIndex >= 0 && currentQuestionIndex < store.state.questions.length)) {
+                _context2.next = 11;
+                break;
+              }
+              _currentQuestion = store.state.questions[currentQuestionIndex];
               store.commit("addUserAnswer", {
                 answer: answer,
                 question: {
-                  text: currentQuestion.question,
-                  correct_answer: currentQuestion.correct_answer
+                  text: _currentQuestion.question,
+                  correct_answer: _currentQuestion.correct_answer
                 }
               });
 
@@ -19129,12 +19190,16 @@ var _default = exports["default"] = {
               fetchingQuestion.value = false;
 
               // Move to the next question
-              _context2.next = 6;
+              _context2.next = 8;
               return fetchQuestion();
-            case 6:
+            case 8:
               // Check if the quiz is completed after fetching the next question
               checkQuizCompletion();
-            case 7:
+              _context2.next = 12;
+              break;
+            case 11:
+              console.error("Invalid currentQuestionIndex:", currentQuestionIndex);
+            case 12:
             case "end":
               return _context2.stop();
           }
@@ -19144,10 +19209,13 @@ var _default = exports["default"] = {
         return _ref2.apply(this, arguments);
       };
     }();
+
+    // Fetch the first question when the component is mounted
     (0, _vue.onMounted)(function () {
-      // Fetch the first question when the component is mounted
       fetchQuestion();
     });
+
+    // Watch for changes in questions and update category and question
     (0, _vue.watch)(function () {
       return store.state.questions;
     }, function () {
@@ -19196,7 +19264,7 @@ var _default = exports["default"] = {
     Footer: _Footer["default"]
   },
   mounted: function mounted() {
-    console.log('userAnswers in Results.vue', this.$store.state.userAnswers);
+    //console.log('userAnswers in Results.vue', this.$store.state.userAnswers);
   },
   computed: {
     correctAnswers: function correctAnswers() {
@@ -19256,7 +19324,7 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = /*#__PURE__*/(0, _vue.createElementVNode)("div", {
   "class": "content has-text-centered"
-}, [/*#__PURE__*/(0, _vue.createElementVNode)("p", null, [/*#__PURE__*/(0, _vue.createCommentVNode)(" Your footer content goes here "), /*#__PURE__*/(0, _vue.createElementVNode)("strong", null, "Your App Name"), /*#__PURE__*/(0, _vue.createTextVNode)(" © 2024 ")])], -1 /* HOISTED */);
+}, [/*#__PURE__*/(0, _vue.createElementVNode)("p", null, [/*#__PURE__*/(0, _vue.createCommentVNode)(" Your footer content goes here "), /*#__PURE__*/(0, _vue.createElementVNode)("strong", null, "Trivia Challenge"), /*#__PURE__*/(0, _vue.createTextVNode)(" © 2024 by Gonzalo Gutierrez ")])], -1 /* HOISTED */);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("footer", _hoisted_1, [].concat(_hoisted_3));
@@ -19264,10 +19332,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788 ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -19277,15 +19345,82 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.render = render;
 var _vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+var _withScopeId = function _withScopeId(n) {
+  return (0, _vue.pushScopeId)("data-v-7cd4f788"), n = n(), (0, _vue.popScopeId)(), n;
+};
 var _hoisted_1 = {
   "class": "navbar",
   role: "navigation",
   "aria-label": "main navigation"
 };
-var _hoisted_2 = /*#__PURE__*/(0, _vue.createStaticVNode)("<div class=\"navbar-brand\"><a class=\"navbar-item\" href=\"/\"><!-- Your logo or site name goes here --> Trivia Challenge </a></div><div id=\"navbarBasicExample\" class=\"navbar-menu\"><div class=\"navbar-end\"><div class=\"navbar-item\"><div class=\"buttons\"><!-- Your navigation links go here --><a class=\"button is-primary\"><strong>Home</strong></a><a class=\"button is-light\"> About </a></div></div></div></div>", 2);
-var _hoisted_4 = [_hoisted_2];
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0, _vue.createElementVNode)("div", {
+    "class": "navbar-brand"
+  }, [/*#__PURE__*/(0, _vue.createElementVNode)("a", {
+    "class": "navbar-item",
+    href: "/"
+  }, [/*#__PURE__*/(0, _vue.createElementVNode)("span", {
+    "class": "title is-3 has-text-weight-bold"
+  }, "Trivia Challenge")])], -1 /* HOISTED */);
+});
+var _hoisted_3 = {
+  id: "navbarBasicExample",
+  "class": "navbar-menu"
+};
+var _hoisted_4 = {
+  "class": "navbar-end"
+};
+var _hoisted_5 = {
+  "class": "navbar-item"
+};
+var _hoisted_6 = {
+  "class": "buttons"
+};
+var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0, _vue.createElementVNode)("a", {
+    href: "/",
+    "class": "button is-primary"
+  }, [/*#__PURE__*/(0, _vue.createElementVNode)("strong", null, "Home")], -1 /* HOISTED */);
+});
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("nav", _hoisted_1, [].concat(_hoisted_4));
+  var _component_router_link = (0, _vue.resolveComponent)("router-link");
+  return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("nav", _hoisted_1, [_hoisted_2, (0, _vue.createElementVNode)("div", _hoisted_3, [(0, _vue.createElementVNode)("div", _hoisted_4, [(0, _vue.createElementVNode)("div", _hoisted_5, [(0, _vue.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0, _vue.createVNode)(_component_router_link, {
+    to: "/about",
+    "class": "button is-light"
+  }, {
+    "default": (0, _vue.withCtx)(function () {
+      return [(0, _vue.createTextVNode)(" About ")];
+    }),
+    _: 1 /* STABLE */
+  })])])])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=template&id=2995bb7e":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=template&id=2995bb7e ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.render = render;
+var _vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+var _hoisted_1 = /*#__PURE__*/(0, _vue.createElementVNode)("section", {
+  "class": "section"
+}, [/*#__PURE__*/(0, _vue.createElementVNode)("div", {
+  "class": "container"
+}, [/*#__PURE__*/(0, _vue.createElementVNode)("h2", {
+  "class": "title is-2"
+}, "About Trivia Challenge"), /*#__PURE__*/(0, _vue.createElementVNode)("p", null, " Welcome to Trivia Challenge, a simple quiz application built with Vue.js and Laravel. "), /*#__PURE__*/(0, _vue.createElementVNode)("p", null, " This app is designed to test your knowledge on various topics through a series of trivia questions. Have fun, challenge yourself, and see how well you can score! ")])], -1 /* HOISTED */);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Nav = (0, _vue.resolveComponent)("Nav");
+  var _component_Footer = (0, _vue.resolveComponent)("Footer");
+  return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("div", null, [(0, _vue.createVNode)(_component_Nav), _hoisted_1, (0, _vue.createVNode)(_component_Footer)]);
 }
 
 /***/ }),
@@ -19370,13 +19505,13 @@ var _hoisted_8 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Nav = (0, _vue.resolveComponent)("Nav");
   var _component_Footer = (0, _vue.resolveComponent)("Footer");
-  return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("div", null, [(0, _vue.createVNode)(_component_Nav), (0, _vue.createElementVNode)("div", _hoisted_1, [(0, _vue.createElementVNode)("div", _hoisted_2, [(0, _vue.createElementVNode)("h2", {
+  return (0, _vue.openBlock)(), (0, _vue.createElementBlock)("div", null, [(0, _vue.createVNode)(_component_Nav), (0, _vue.createElementVNode)("div", _hoisted_1, [(0, _vue.createCommentVNode)(" Notification for quiz "), (0, _vue.createElementVNode)("div", _hoisted_2, [(0, _vue.createElementVNode)("h2", {
     "class": "title is-4",
     innerHTML: $setup.category
   }, null, 8 /* PROPS */, _hoisted_3), (0, _vue.createElementVNode)("p", {
     "class": "subtitle is-6 question-text",
     innerHTML: $setup.question
-  }, null, 8 /* PROPS */, _hoisted_4)]), (0, _vue.createElementVNode)("div", _hoisted_5, [(0, _vue.createElementVNode)("button", {
+  }, null, 8 /* PROPS */, _hoisted_4)]), (0, _vue.createCommentVNode)(" Buttons for True and False "), (0, _vue.createElementVNode)("div", _hoisted_5, [(0, _vue.createElementVNode)("button", {
     "class": "button is-success",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.answerQuestion(true);
@@ -19388,7 +19523,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.answerQuestion(false);
     }),
     disabled: $setup.fetchingQuestion
-  }, " False ", 8 /* PROPS */, _hoisted_7)]), (0, _vue.createElementVNode)("p", _hoisted_8, (0, _vue.toDisplayString)($setup.store.state.currentQuestion) + " of " + (0, _vue.toDisplayString)($setup.store.state.totalQuestions), 1 /* TEXT */)]), (0, _vue.createVNode)(_component_Footer)]);
+  }, " False ", 8 /* PROPS */, _hoisted_7)]), (0, _vue.createCommentVNode)(" Display current question number "), (0, _vue.createElementVNode)("p", _hoisted_8, (0, _vue.toDisplayString)($setup.store.state.currentQuestion) + " of " + (0, _vue.toDisplayString)($setup.store.state.totalQuestions), 1 /* TEXT */)]), (0, _vue.createVNode)(_component_Footer)]);
 }
 
 /***/ }),
@@ -19485,6 +19620,35 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_bulma_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_style_index_0_id_7cd4f788_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_style_index_0_id_7cd4f788_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_style_index_0_id_7cd4f788_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -19883,15 +20047,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   __esModule: () => (/* reexport safe */ _Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.__esModule),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Nav_vue_vue_type_template_id_7cd4f788__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav.vue?vue&type=template&id=7cd4f788 */ "./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788");
+/* harmony import */ var _Nav_vue_vue_type_template_id_7cd4f788_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav.vue?vue&type=template&id=7cd4f788&scoped=true */ "./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true");
 /* harmony import */ var _Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav.vue?vue&type=script&lang=js */ "./resources/js/components/Nav.vue?vue&type=script&lang=js");
+/* harmony import */ var _Nav_vue_vue_type_style_index_0_id_7cd4f788_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css */ "./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css");
+/* harmony import */ var C_Users_57300_Documents_trivia_app_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,C_Users_57300_Documents_trivia_app_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Nav_vue_vue_type_template_id_7cd4f788_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-7cd4f788"],['__file',"resources/js/components/Nav.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/views/About.vue":
+/*!**************************************!*\
+  !*** ./resources/js/views/About.vue ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __esModule: () => (/* reexport safe */ _About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.__esModule),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _About_vue_vue_type_template_id_2995bb7e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./About.vue?vue&type=template&id=2995bb7e */ "./resources/js/views/About.vue?vue&type=template&id=2995bb7e");
+/* harmony import */ var _About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About.vue?vue&type=script&lang=js */ "./resources/js/views/About.vue?vue&type=script&lang=js");
 /* harmony import */ var C_Users_57300_Documents_trivia_app_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_57300_Documents_trivia_app_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Nav_vue_vue_type_template_id_7cd4f788__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Nav.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_57300_Documents_trivia_app_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_About_vue_vue_type_template_id_2995bb7e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/About.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -20035,6 +20230,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/views/About.vue?vue&type=script&lang=js":
+/*!**************************************************************!*\
+  !*** ./resources/js/views/About.vue?vue&type=script&lang=js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __esModule: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.__esModule),
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./About.vue?vue&type=script&lang=js */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/views/Home.vue?vue&type=script&lang=js":
 /*!*************************************************************!*\
   !*** ./resources/js/views/Home.vue?vue&type=script&lang=js ***!
@@ -20115,18 +20326,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788":
-/*!***********************************************************************!*\
-  !*** ./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788 ***!
-  \***********************************************************************/
+/***/ "./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __esModule: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788__WEBPACK_IMPORTED_MODULE_0__.__esModule),
-/* harmony export */   render: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   __esModule: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788_scoped_true__WEBPACK_IMPORTED_MODULE_0__.__esModule),
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=template&id=7cd4f788 */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_7cd4f788_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=template&id=7cd4f788&scoped=true */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=template&id=7cd4f788&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/views/About.vue?vue&type=template&id=2995bb7e":
+/*!********************************************************************!*\
+  !*** ./resources/js/views/About.vue?vue&type=template&id=2995bb7e ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __esModule: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_template_id_2995bb7e__WEBPACK_IMPORTED_MODULE_0__.__esModule),
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_template_id_2995bb7e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_About_vue_vue_type_template_id_2995bb7e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./About.vue?vue&type=template&id=2995bb7e */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/About.vue?vue&type=template&id=2995bb7e");
 
 
 /***/ }),
@@ -20175,6 +20402,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Results_vue_vue_type_template_id_07ac35b2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_laravel_mix_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_babel_loader_lib_index_js_clonedRuleSet_22_use_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Results_vue_vue_type_template_id_07ac35b2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Results.vue?vue&type=template&id=07ac35b2 */ "./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/babel-loader/lib/index.js??clonedRuleSet-22.use!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Results.vue?vue&type=template&id=07ac35b2");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_style_index_0_id_7cd4f788_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Nav.vue?vue&type=style&index=0&id=7cd4f788&scoped=true&lang=css");
 
 
 /***/ }),
@@ -22015,6 +22254,7 @@ var _vueRouter = __webpack_require__(/*! vue-router */ "./node_modules/vue-route
 var _Home = _interopRequireDefault(__webpack_require__(/*! ../views/Home.vue */ "./resources/js/views/Home.vue"));
 var _Quiz = _interopRequireDefault(__webpack_require__(/*! ../views/Quiz.vue */ "./resources/js/views/Quiz.vue"));
 var _Results = _interopRequireDefault(__webpack_require__(/*! ../views/Results.vue */ "./resources/js/views/Results.vue"));
+var _About = _interopRequireDefault(__webpack_require__(/*! ../views/About.vue */ "./resources/js/views/About.vue"));
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     "default": obj
@@ -22032,6 +22272,11 @@ var routes = [{
   path: '/result',
   name: 'result',
   component: _Results["default"]
+}, {
+  path: "/about",
+  // Add a new route for the About page
+  name: "about",
+  component: _About["default"]
 }];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHistory)(),
@@ -22057,7 +22302,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-b
 var _default = exports["default"] = (0, _vuex.createStore)({
   state: {
     currentQuestion: 0,
-    totalQuestions: 3,
+    totalQuestions: 10,
     questions: [],
     userAnswers: [],
     // Store user's answers to calculate results
@@ -22091,7 +22336,6 @@ var _default = exports["default"] = (0, _vuex.createStore)({
       // Push the structured answer to the userAnswers array
       state.userAnswers.push(structuredAnswer);
       state.recentUserAnswers.push(structuredAnswer); // Save recent user answers
-      console.log("userAnswers IN STORE:", state.userAnswers);
     },
     resetQuizState: function resetQuizState(state) {
       state.currentQuestion = 0;

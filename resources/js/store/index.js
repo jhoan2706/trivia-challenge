@@ -3,7 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
     state: {
         currentQuestion: 0,
-        totalQuestions: 3,
+        totalQuestions: 10,
         questions: [],
         userAnswers: [], // Store user's answers to calculate results
         recentUserAnswers: [], // Store recent user's answers that can be discarded
@@ -36,7 +36,6 @@ export default createStore({
             // Push the structured answer to the userAnswers array
             state.userAnswers.push(structuredAnswer);
             state.recentUserAnswers.push(structuredAnswer); // Save recent user answers
-            console.log("userAnswers IN STORE:", state.userAnswers);
         },
         resetQuizState(state) {
             state.currentQuestion = 0;

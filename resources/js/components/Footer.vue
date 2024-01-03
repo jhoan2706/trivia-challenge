@@ -4,7 +4,7 @@
       <div class="content has-text-centered">
         <p>
           <!-- Your footer content goes here -->
-          <strong>Your App Name</strong> &copy; 2024
+          <strong>Trivia Challenge</strong> &copy; 2024 by Gonzalo Gutierrez
         </p>
       </div>
     </footer>

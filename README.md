@@ -15,7 +15,7 @@ Welcome to the Trivia Challenge App! This app is a simple quiz application built
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/your-username/trivia-app.git
    ```
 
 2. Navigate to the project directory:
@@ -24,7 +24,15 @@ Welcome to the Trivia Challenge App! This app is a simple quiz application built
    cd trivia-app
    ```
 
-3. Install dependencies:
+3. Copy the `.env.example` file to create a new `.env` file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Open the new `.env` file and configure it with your environment settings.
+
+4. Install dependencies:
 
    ```bash
    npm install
@@ -50,5 +58,3 @@ Welcome to the Trivia Challenge App! This app is a simple quiz application built
 
 3. Open your browser and navigate to `http://localhost:8080` to access the Trivia Challenge App.
 ```
-
-This revised version provides clear instructions for cloning the repository, navigating to the project directory, and installing the necessary dependencies. It also separates the "Running the App" section into distinct steps for starting the Laravel server and the Vue.js development server. Feel free to adjust any additional details as needed.
