@@ -2,7 +2,7 @@
 <template>
     <div>
       <Nav />
-      <section class="hero is-primary is-fullheight">
+      <section class="hero">
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title is-1">Welcome to the Trivia Challenge!</h1>
@@ -10,7 +10,7 @@
               You will be presented with 10 true or false questions. Can you
               score 100%?
             </p>
-            <router-link to="/quiz" class="button is-primary is-large">
+            <router-link to="/quiz" class="button is-info is-large">
               BEGIN
             </router-link>
           </div>

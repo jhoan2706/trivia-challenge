@@ -16,4 +16,13 @@
   </script>
 
   <style scoped>
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8; /* Cambia esto al color de fondo deseado */
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Agrega un borde superior opcional */
+  }
   </style>

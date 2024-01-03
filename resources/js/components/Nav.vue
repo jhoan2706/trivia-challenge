@@ -10,7 +10,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a href="/" class="button is-primary">
+              <a href="/" class="button is-link">
                 <strong>Home</strong>
               </a>
               <router-link to="/about" class="button is-light">

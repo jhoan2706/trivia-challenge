@@ -1,39 +1,46 @@
 <template>
-    <div>
-        <Nav />
-        <div class="quiz-container">
+  <div>
+    <Nav />
+    <div class="quiz-container has-text-centered">
+      <!-- Bulma card -->
+      <div class="card">
+        <header class="card-header custom-card-header">
+          <p class="card-header-title is-2" v-html="category"></p>
+        </header>
+        <div class="card-content">
+          <div class="content">
             <!-- Notification for quiz -->
-            <div class="notification is-primary">
-                <h2 class="title is-4" v-html="category"></h2>
-                <p class="subtitle is-6 question-text" v-html="question"></p>
-            </div>
+            <p class="subtitle is-6 question-text" v-html="question"></p>
 
             <!-- Buttons for True and False -->
             <div class="buttons">
-                <button
-                    class="button is-success"
-                    @click="answerQuestion(true)"
-                    :disabled="fetchingQuestion"
-                >
-                    True
-                </button>
-                <button
-                    class="button is-danger"
-                    @click="answerQuestion(false)"
-                    :disabled="fetchingQuestion"
-                >
-                    False
-                </button>
+              <button
+                class="button is-success"
+                @click="answerQuestion(true)"
+                :disabled="fetchingQuestion"
+              >
+                True
+              </button>
+              <button
+                class="button is-danger"
+                @click="answerQuestion(false)"
+                :disabled="fetchingQuestion"
+              >
+                False
+              </button>
             </div>
 
             <!-- Display current question number -->
             <p class="has-text-info">
-                {{ store.state.currentQuestion }} of
-                {{ store.state.totalQuestions }}
+              {{ store.state.currentQuestion }} of
+              {{ store.state.totalQuestions }}
             </p>
+          </div>
         </div>
-        <Footer />
+      </div>
     </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -163,7 +170,7 @@ export default {
 
 <style scoped>
 .quiz-container {
-    max-width: 400px;
+    max-width: 600px; /* You can adjust this value as needed */
     margin: 0 auto;
     padding: 20px;
 }
@@ -176,3 +183,4 @@ export default {
     margin-top: 10px;
 }
 </style>
+

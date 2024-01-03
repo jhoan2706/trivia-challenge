@@ -1,11 +1,11 @@
 <template>
     <div>
       <Nav />
-      <section class="section">
-        <div class="container">
-          <h2 class="title is-2">Your Score</h2>
-          <h3 class="subtitle is-3">You scored {{ correctAnswers }}/{{ $store.state.totalQuestions }}</h3>
+      <div class="container result-container">
+        <h2 class="title is-2">Your Score</h2>
+        <h3 class="subtitle is-3">You scored {{ correctAnswers }}/{{ $store.state.totalQuestions }}</h3>
 
+        <div class="scrollable-container">
           <ul class="mt-4">
             <li v-for="(result, index) in $store.state.userAnswers" :key="index" class="mb-2">
               <p v-html="result.question.text"></p> -
@@ -19,10 +19,10 @@
               </strong>
             </li>
           </ul>
-
-          <button @click="playAgain" class="button is-primary mt-4">PLAY AGAIN</button>
         </div>
-      </section>
+
+        <button @click="playAgain" class="button is-primary mt-4">PLAY AGAIN</button>
+      </div>
       <Footer />
     </div>
   </template>
@@ -53,3 +53,15 @@
     },
   };
   </script>
+
+<style scoped>
+.result-container {
+    max-width: 600px; /* You can adjust this value as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+.scrollable-container {
+  max-height: 450px; /* Ajusta esta altura según sea necesario */
+  overflow-y: auto;
+}
+</style>
