@@ -35,6 +35,10 @@ Welcome to the Trivia Challenge App! This app is a simple quiz application built
 4. Install dependencies:
 
    ```bash
+   composer install
+   ```
+   
+   ```bash
    npm install
    ```
 
