@@ -46,15 +46,7 @@ Welcome to the Trivia Challenge App! This app is a simple quiz application built
    php artisan serve
    ```
 
-   Ensure the Laravel server is running on `http://localhost:8000`.
+   The Vue.js app will be accessible at `http://localhost:8000`.
 
-2. In a separate terminal, start the Vue.js development server:
-
-   ```bash
-   npm run serve
-   ```
-
-   The Vue.js app will be accessible at `http://localhost:8080`.
-
-3. Open your browser and navigate to `http://localhost:8080` to access the Trivia Challenge App.
+3. Open your browser and navigate to `http://localhost:8000` to access the Trivia Challenge App.
 ```
